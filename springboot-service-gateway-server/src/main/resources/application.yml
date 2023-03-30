@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: product-service
+        uri: lb://PRODUCT-SERVICE
+        predicates:
+        - Path=/api/products/**
+        filters:
+        - Test=my personal msg, user, Joan
+#        - name: Test
+#          args:
+#            message: my personal msg
+#            cookieName: user
+#            cookieValue: Joan
+        
+      - id: item-service
+        uri: lb://ITEM-SERVICE
+        predicates:
+        - Path=/api/items/**
