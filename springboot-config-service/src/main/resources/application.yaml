@@ -13,7 +13,7 @@ spring:
     config:
       server:
         git:
-          uri: file://C:/Users/JoanVPC/Desktop/projects/spring_boot/spring_microservice_udemy/springboot-config-service
+          uri: file:///C:/Users/JoanVPC/Desktop/projects/spring_boot/spring_microservice_udemy
 
   profiles:
     active:
