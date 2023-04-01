@@ -7,6 +7,11 @@ spring:
         predicates:
         - Path=/api/products/**
         filters:
+        - name: CircuitBreaker
+          args:
+           name: products
+           statusCode: 500
+           fallbackUri: forward:/api/items/2/quantity/5
         - Test=my personal msg, user, Joan
 #        - name: Test
 #          args:
