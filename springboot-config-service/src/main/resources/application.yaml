@@ -1,0 +1,20 @@
+#
+#spring.application.name=config-server
+#server.port=8081
+#
+#spring.profiles.active=native
+#spring.cloud.config.server.git.uri=file:///C:/Users/JoanVPC/Desktop/projects/spring_boot/spring_microservice_udemy/springboot-config-service
+
+spring:
+  application:
+    name: config-server
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///C:/Users/JoanVPC/Desktop/projects/spring_boot/spring_microservice_udemy/springboot-config-service
+
+  profiles:
+    active:
+    - native
