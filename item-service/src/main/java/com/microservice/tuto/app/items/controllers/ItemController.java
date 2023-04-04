@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.microservice.tuto.app.items.entities.Item;
 import com.microservice.tuto.app.items.interfaces.IController;
-import com.microservice.tuto.app.items.interfaces.IReadService;
+import com.microservice.tuto.app.items.interfaces.ICrudService;
 import com.netflix.discovery.converters.Auto;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -23,7 +23,7 @@ import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 public class ItemController implements IController<Item> {
 
 	@Autowired
-	private IReadService<Item> iReadService;
+	private ICrudService<Item> iReadService;
 
 	@Autowired
 	private CircuitBreakerFactory cbBreakerFactory;

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.microservice.tuto.app.items.clients.IProductClientRest;
 import com.microservice.tuto.app.items.entities.Item;
-import com.microservice.tuto.app.items.interfaces.IReadService;
+import com.microservice.tuto.app.items.interfaces.ICrudService;
 
 @Service
-public class ItemService implements IReadService<Item> {
+public class ItemService implements ICrudService<Item> {
 
 	@Autowired
 	private IProductClientRest iProductClientRest;
@@ -24,6 +24,16 @@ public class ItemService implements IReadService<Item> {
 	@Override
 	public Item findById(long id, Integer quantity) {
 		return new Item(iProductClientRest.detail(id), quantity);
+	}
+
+	@Override
+	public void update(Item entity, long id) {
+		iProductClientRest.update(entity.getProduct(), id);
+	}
+
+	@Override
+	public void delete(long id) {
+		iProductClientRest.delete(id);
 	}
 
 //	@Autowired
@@ -40,6 +50,16 @@ public class ItemService implements IReadService<Item> {
 //	public Item findById(long id, Integer quantity) {
 //		Product product = restTemplate.getForObject("http:product-service/api/products/{id}", Product.class, id);
 //		return new Item(product, quantity);
+//	}
+	
+//	public void updateTestRestTemplate(Item item, Long id) {
+//		Map<String, String> pathVariables = new HashMap<>();
+//		pathVariables.put("id", id.toString());
+//		
+//		HttpEntity<Product> body = new HttpEntity<Product>(item.getProduct());
+//		ResponseEntity<Product> response = restTemplate.exchange("http:product-service/api/products/{id}", HttpMethod.PUT, body, Product.class, pathVariables);
+//		
+//		response.getBody();
 //	}
 
 }
