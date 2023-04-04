@@ -1,10 +1,10 @@
-package com.microservice.tuto.app.commons;
+package com.microservice.tuto.app.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootCommonsServiceApplicationTests {
+class UserServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
