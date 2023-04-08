@@ -9,7 +9,13 @@ import com.microservice.tuto.app.oauth.entities.User;
 @FeignClient(name = "user-service")
 public interface IUserClientRest {
 
-	@PostMapping("/api/user/signin")
-	public User signIn(LoginDTO loginDTO);
+	@PostMapping("/api/user/email/signin")
+	public User loginInEmail(String userName);
+
+	@PostMapping("/api/user/username/signin")
+	public User loginInUserName(String userName);
+
+	@PostMapping("/api/user/username/or/email/signin")
+	public User loginUserNameOrEmail(String userName);
 
 }

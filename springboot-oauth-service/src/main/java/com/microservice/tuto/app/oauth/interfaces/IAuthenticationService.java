@@ -4,9 +4,11 @@ import com.microservice.tuto.app.oauth.entities.User;
 
 public interface IAuthenticationService {
 
-	public User loginEmail(String email, String pass);
+	public User loginEmail(String userName);
 
-	public User loginUserName(String email, String pass);
+	public User loginUserName(String userName);
+
+	public User loginUserNameOrEmail(String userName);
 
 	public boolean existUserByUserName(String userName);
 

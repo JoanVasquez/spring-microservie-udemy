@@ -10,6 +10,7 @@ import lombok.Setter;
 public class User {
 
 	private Long id;
+	private String userName;
 	private String name;
 	private String lastName;
 	private boolean enabled;
